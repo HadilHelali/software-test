@@ -1,0 +1,48 @@
+package tp_test1.junit.monprojet.test;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+import tp_test1.junit.monprojet.SommeArgent;
+
+public class JUnit4 {
+
+	@Test
+	public void AdditionTest() {
+	    SommeArgent m12CHF = new SommeArgent(12, "CHF");
+	    SommeArgent m14CHF = new SommeArgent(14, "CHF");
+	    SommeArgent expected = new SommeArgent(26, "CHF");
+	    SommeArgent result = m12CHF.add(m14CHF);
+	    Assert.assertTrue(expected.equals(result));
+	}
+	
+	@Test
+	public void EqualsTest() {
+	    SommeArgent m12CHF = new SommeArgent(12, "CHF");
+	    SommeArgent m14CHF = new SommeArgent(14, "CHF");
+	    SommeArgent m14USD = new SommeArgent(14, "USD");
+
+	    // Test null comparison
+	    Assert.assertFalse(m12CHF.equals(null));
+
+	    // Test reflexive property of equals
+	    Assert.assertTrue(m12CHF.equals(m12CHF));
+
+	    // Test symmetric property of equals
+	    Assert.assertTrue(m12CHF.equals(new SommeArgent(12, "CHF")));
+	    Assert.assertTrue(new SommeArgent(12, "CHF").equals(m12CHF));
+
+	    // Test transitive property of equals
+	    SommeArgent m12CHF2 = new SommeArgent(12, "CHF");
+	    Assert.assertTrue(m12CHF.equals(m12CHF2));
+	    Assert.assertTrue(m12CHF2.equals(new SommeArgent(12, "CHF")));
+	    Assert.assertTrue(m12CHF.equals(new SommeArgent(12, "CHF")));
+
+	    // Test unequal amounts
+	    Assert.assertFalse(m12CHF.equals(m14CHF));
+
+	    // Test unequal currencies
+	    Assert.assertFalse(m14USD.equals(m14CHF));
+	}
+
+}

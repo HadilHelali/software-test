@@ -1,0 +1,36 @@
+package tp_test2;
+
+public class PolynomeSecondDegre {
+private double a, b, c;
+private double[] racines;
+
+public PolynomeSecondDegre(double a, double b, double c) {
+super();
+this.a = a;
+this.b = b;
+this.c = c;
+}
+
+
+public PolynomeSecondDegre(int i, int j, int k) {
+	// TODO Auto-generated constructor stub
+}
+
+
+
+public double discriminant() {
+return b *b - 4 * a *c;
+}
+public double[] calculRacines() {
+
+racines[0] =0; 
+racines[1] =-2;
+return racines;
+}
+
+
+public double[] calculRacines1() {
+	// TODO Auto-generated method stub
+	return null;
+}
+}

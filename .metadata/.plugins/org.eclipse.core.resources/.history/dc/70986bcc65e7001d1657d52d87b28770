@@ -1,0 +1,15 @@
+package tp_test1.junit.monprojet;
+
+import java.util.HashMap;
+public class PorteMonnaie {
+private HashMap<String, Integer> contenu;
+public HashMap<String, Integer> getContenu() {
+return contenu;
+}
+public PorteMonnaie() {
+contenu = new HashMap<String, Integer>();
+}
+public void ajouteSomme(SommeArgent sa) {
+// à définir cf. question suivante
+}
+}

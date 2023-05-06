@@ -1,0 +1,6 @@
+package tp_test2;
+import junit.framework.*;
+
+public class unittest {
+
+}

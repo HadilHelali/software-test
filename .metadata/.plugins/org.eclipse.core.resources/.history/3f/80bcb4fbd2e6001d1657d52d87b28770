@@ -1,0 +1,19 @@
+package tp_test1.junit.monprojet.test;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+import tp_test1.junit.monprojet.SommeArgent;
+
+public class JUnit4 {
+
+	@Test
+	public void testAddition() {
+	    SommeArgent m12CHF = new SommeArgent(12, "CHF");
+	    SommeArgent m14CHF = new SommeArgent(14, "CHF");
+	    SommeArgent expected = new SommeArgent(26, "CHF");
+	    SommeArgent result = m12CHF.add(m14CHF);
+	    Assert.assertTrue(expected.equals(result));
+	}
+
+}

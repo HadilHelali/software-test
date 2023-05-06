@@ -1,0 +1,11 @@
+package tp_test2;
+
+import junit.framework.TestCase;
+
+public class MaClasseTest extends TestCase{
+
+	  public void testCalculer() throws Exception {
+		  System.out.print(Maclass.calculer(1,1));
+	    assertEquals(2,Maclass.calculer(1,1));
+	  }
+	}

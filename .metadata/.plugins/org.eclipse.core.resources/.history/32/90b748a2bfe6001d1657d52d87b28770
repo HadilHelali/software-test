@@ -1,0 +1,67 @@
+package tp_test2;
+
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import tp_test2.PolynomeSecondDegre;
+
+public class TestEquationSecondDegre {
+
+    @Test
+    public void test2Racines() {
+        PolynomeSecondDegre p = new PolynomeSecondDegre(1, 1, -2);
+        double[] expectedRacines = {1, -2};
+        assertArrayEquals(expectedRacines, p.calculRacines(), 0);
+    }
+
+    @Test
+    public void test1Racine() {
+        PolynomeSecondDegre p = new PolynomeSecondDegre(1, -2, 1);
+        double[] expectedRacines = {1};
+        assertArrayEquals(expectedRacines, p.calculRacines(), 0);
+    }
+
+
+    @Test
+    public void testPasDeRacineReelle() {
+        PolynomeSecondDegre p = new PolynomeSecondDegre(1, 1, 1);
+        double[] expectedRacines = null;
+        assertEquals(expectedRacines, p.calculRacines());
+    }
+    
+    @Test
+    public void testDiscriminant() {
+        PolynomeSecondDegre polynome = new PolynomeSecondDegre(1, 2, 1);
+        double resultatAttendu = 0;
+        double resultatObtenu = polynome.discriminant();
+        assertEquals(resultatAttendu, resultatObtenu, 0.0001);
+    }
+    
+    @Test
+    public void testCalculRacines() {
+        PolynomeSecondDegre polynome = new PolynomeSecondDegre(1, -5, 6);
+        double[] resultatAttendu = {3, 2};
+        double[] resultatObtenu = polynome.calculRacines();
+        assertArrayEquals(resultatAttendu, resultatObtenu, 0.0001);
+    }
+    
+    @Test
+    public void testCalculRacinesAvecUneSeuleRacine() {
+        PolynomeSecondDegre polynome = new PolynomeSecondDegre(1, -4, 4);
+        double[] resultatAttendu = {2};
+        double[] resultatObtenu = polynome.calculRacines();
+        assertArrayEquals(resultatAttendu, resultatObtenu, 0.0001);
+    }
+    
+    @Test
+    public void testCalculRacinesAvecAucuneRacine() {
+        PolynomeSecondDegre polynome = new PolynomeSecondDegre(1, 2, 3);
+        double[] resultatAttendu = null;
+        double[] resultatObtenu = polynome.calculRacines();
+        assertArrayEquals(resultatAttendu, resultatObtenu);
+    }
+    
+}
